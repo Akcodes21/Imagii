@@ -1,0 +1,39 @@
+<nav>
+    <h2>IMAGII WORLD</h2>
+    <ul>
+        <li><a href = "/">HOME</a></li>
+        <% if (user) { %>
+          <li><a href = "/user/profile">I WORLD</a></li>
+          <li><a href = "/auth/logout">LOGOUT</a></li>
+          <li><a href = "/admin/users">MANAGE WORLDS</a></li>
+        <% } else {%>
+          <li><a href = "/auth/register">REGISTER</a></li>
+          <li><a href = "/auth/login">LOGIN</a></li>
+          <% } %> 
+    </ul>
+</nav>
+
+<style>
+  nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+nav > ul > li {
+  list-style: none;
+  display: inline-block;
+}
+
+nav > ul > li > a,
+a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+nav > ul > li > a:hover,
+a:hover {
+  background-color: #020523;
+}
+</style>

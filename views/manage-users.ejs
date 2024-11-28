@@ -1,0 +1,106 @@
+<%- include ('layouts/header') %>
+<h1 class="table"> Mange Users</h1>
+
+<table class="table">
+    <thead>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Role</th>
+    </thead>
+    <tbody>
+        <% users.forEach(user => { %>
+         <tr>
+            <td><%= user.id %></td>
+            <td><a href="/admin/user/<%= user.id %>"><%= user.email %></a></td>
+            <td>
+                <form action="/admin/update-role" method ="post" class="manage-user-form" >
+                    <input type="hidden" name="hidden" value="<%= user.id %>">
+                    <select name="role" id="role">
+                        <option value="ADMIN" <%= user.role === 'ADMIN' ? 'selected': '' %>>Admin</option>
+                        <option value="MODERATOR" <%= user.role === 'MODERATOR' ? 'selected': '' %>>Moderator</option>
+                        <option value="CLIENT" <%= user.role === 'CLIENT' ? 'selected': '' %>>Client</option>
+                    </select>
+                    <input type="submit" value="update">
+                </form>
+            </td>
+         </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+
+<%- include ('layouts/footer') %>
+
+<style>
+    /* General styling for the body */
+    body {
+        font-family: 'Arial', sans-serif;
+        background: url('/images/iimage.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        color: #fff; /* White text for better contrast */
+    }
+
+    /* Table styling */
+    .table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+        backdrop-filter: blur(10px); /* Apply the blur effect */
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: #fff; /* White text inside the table */
+    }
+
+    /* Table header */
+    .table thead {
+        background-color: rgba(0, 0, 0, 0.8); /* Darker background for header */
+        color: white;
+        text-align: left;
+    }
+
+    .table th {
+        padding: 12px 15px;
+        font-size: 1.2em;
+    }
+
+    /* Table body */
+    .table tbody tr:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.1); /* Light background for odd rows */
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.2); /* Light background for even rows */
+    }
+
+    .table td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    /* Links in table */
+    .table a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .table a:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsive Table */
+    @media screen and (max-width: 768px) {
+        .table {
+            width: 95%;
+            margin: 10px auto;
+        }
+
+        .table th, .table td {
+            padding: 8px;
+            font-size: 1em;
+        }
+    }
+</style>

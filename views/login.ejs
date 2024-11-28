@@ -1,0 +1,111 @@
+<%- include('layouts/header') %>
+
+<div class="login-container">
+    <div class="form-container">
+        <h1>Login to IMAGII WORLD</h1>
+        <form action="/auth/login" method="POST">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="/auth/register">Register here</a></p>
+    </div>
+</div>
+
+<%- include('layouts/footer') %>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url('/images/iimage.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        color: white; /* Make text white */
+        font-family: 'Arial', sans-serif;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        backdrop-filter: blur(5px);
+    }
+
+    .form-container {
+        background: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #ffffff; /* White text for heading */
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    label {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+        color: #ffffff; /* White text for labels */
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: none;
+        background: #f1f1f1;
+        color: #333;
+        font-size: 1em;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #3949ab;
+    }
+
+    p {
+        margin-top: 15px;
+        font-size: 1.1em;
+        color: #ffffff; /* White text for paragraph */
+    }
+
+    a {
+        color: #82b1ff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>

@@ -1,0 +1,54 @@
+<%- include('layouts/header') %>
+
+<form action="/user/profile" method="POST"></form>
+<div class="iworld-container">
+    <div class="welcome-message">
+        
+        <h1>Welcome to your IMAGII WORLD</h1> <p>Step into a world of endless possibilities and creative wonders!</p>
+        
+    </div>
+</div>
+</form>
+
+<%- include('layouts/footer') %>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url('/images/iimage.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        color: white; /* Make text white */
+        font-family: 'Arial', sans-serif;
+    }
+
+    .iworld-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        backdrop-filter: blur(5px);
+    }
+
+    .welcome-message {
+        background: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #ffffff; /* White text for heading */
+    }
+
+    p {
+        font-size: 1.5em;
+        color: #ffffff; /* White text for paragraph */
+    }
+</style> 

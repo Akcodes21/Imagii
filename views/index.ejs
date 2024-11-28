@@ -1,0 +1,40 @@
+<%- include('layouts/header') %>
+
+<div class="home-container">
+    <h1>Welcome to IMAGII WORLD</h1>
+    <p>Step into a magical universe filled with wonders and mysteries.</p>
+</div>
+
+<%- include('layouts/footer') %>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url('/images/iimage.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .home-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    h1 {
+        font-size: 4em;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+</style>
+
+
